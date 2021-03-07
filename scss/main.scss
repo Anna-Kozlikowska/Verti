@@ -1,0 +1,59 @@
+@import "reset";
+@import "media";
+@import "grid";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+@import "logo";
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.center {
+  display: flex;
+  @include breakpoint(xs) {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+
+  .menu-btn {
+    display: none;
+  }
+  
+  #menu-btn{
+    &:checked {
+      ~ ul {
+        display: block;
+      }
+    }
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    @include breakpoint(sm){
+      display: none;
+    }
+  }
+
+  ul {
+    display: none;
+    @include breakpoint(sm) {
+      display: flex;
+    }
+    li {
+      margin: 5px
+    }
+    a {
+      text-decoration: none;
+      color: grey;
+      font-weight: 600;
+    }
+  }
+}
